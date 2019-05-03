@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import NumberItem from './NumberItem'
+import BetterNumberItem from './BetterNumberItem'
 
-class NumberList extends Component {
+class BetterNumberList extends Component {
   constructor(props) {
     super(props)
     this.state = { nums: [1, 2, 3, 4, 5] }
+
+    this.remove = this.remove.bind(this)
   }
 
   remove(num) {
@@ -14,14 +16,14 @@ class NumberList extends Component {
   }
 
   render() {
-    let nums = this.state.nums.map(n => <NumberItem value={n} remove={() => this.remove(n)} />)
+    let nums = this.state.nums.map(n => <BetterNumberItem value={n} remove={this.remove} />)
     return (
       <div>
-        <h1>First Number List</h1>
+        <h1>Better Number List</h1>
         <ul>{nums}</ul>
       </div>
     )
   }
 }
 
-export default NumberList
+export default BetterNumberList
