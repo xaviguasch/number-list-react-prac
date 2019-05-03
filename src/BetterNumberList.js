@@ -16,7 +16,7 @@ class BetterNumberList extends Component {
   }
 
   render() {
-    let nums = this.state.nums.map(n => <BetterNumberItem value={n} remove={this.remove} />)
+    let nums = this.state.nums.map(n => <BetterNumberItem value={n} key={n} remove={this.remove} />)
     return (
       <div>
         <h1>Better Number List</h1>
